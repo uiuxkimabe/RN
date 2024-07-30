@@ -14,7 +14,6 @@ const currentYear = new Date().getFullYear();
 // Waktu Ulang Tahun
 const birthdayTime = new Date(`August 13 ${currentYear} 00:00:00`)
 
-
 // Update Countdown Time
 
 function updateCountdown() {
@@ -41,6 +40,34 @@ function updateCountdown() {
     } else if (m <= 0 && s <= 1) {
         video.classList.add('show')
         // console.info(birthdayTime)
+        setTimeout(() => {
+            const end = Date.now() + 15 * 1000;
+
+            // go Buckeyes!
+            const colors = ["#46c6dd", "#fa1ba4"];
+
+            (function frame() {
+            confetti({
+                particleCount: 2,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: colors,
+            });
+
+            confetti({
+                particleCount: 2,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: colors,
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+            })();
+        }, 500);
     }
 
 }
