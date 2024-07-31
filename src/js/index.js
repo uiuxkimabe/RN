@@ -12,7 +12,7 @@ const video = document.querySelector('#video')
 const currentYear = new Date().getFullYear();
 
 // Waktu Ulang Tahun
-const birthdayTime = new Date(`August 13 ${currentYear} 00:00:00`)
+const birthdayTime = new Date(`July 31 ${currentYear} 00:00:00`)
 
 // Update Countdown Time
 
@@ -41,7 +41,7 @@ function updateCountdown() {
         video.classList.add('show')
         // console.info(birthdayTime)
         setTimeout(() => {
-            const end = Date.now() + 15 * 1000;
+            const end = Date.now() + 15 * 50;
 
             // go Buckeyes!
             const colors = ["#46c6dd", "#fa1ba4"];
@@ -67,7 +67,7 @@ function updateCountdown() {
                 requestAnimationFrame(frame);
             }
             })();
-        }, 500);
+        }, 1000);
     }
 
 }

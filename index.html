@@ -36,8 +36,23 @@
             </div>
         </figcaption>
     </main>
-    <section id="video"></section>
-    
+    <section id="video">
+        <div class="container d-flex">
+            <div class="box">
+                <p id="myElement"></p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- The script itself, loaded AFTER your root element. -->
+    <script src="https://unpkg.com/typeit@@{TYPEIT_VERSION}/dist/index.umd.js"></script>
+    <script>
+      new TypeIt("#myElement", {
+        strings: "This is what will be typed!",
+      }).go();
+    </script>
     <!-- 👇 javascript code file 👇 -->
     <script src="./src/js/index.js"></script>
 </body>
