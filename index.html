@@ -13,9 +13,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </head>
 <body>
+    <audio>
+        <source src="" type="">
+    </audio>
     <main class="d-flex">
         <figcaption>
-            <h1>Birthday Countdown</h1>
+            <h1 class="titleBirthday">Birthday Countdown</h1>
             <div id="countdown" class="countdown d-flex">
                 <div class="time">
                     <h2 class="days"></h2>
@@ -34,25 +37,33 @@
                     <span class="text-time">Second</span>
                 </div>
             </div>
+            <span id="element"></span>
+            <div class="card-msg-detail">
+                <p>For those of you who have the initials "RN".</p>
+                <p>who call as Raniii, and lives in Bogor.</p>
+                <p>who love watching upin & ipin 😁.</p>
+                <p>who have the beautifull eyes.</p>
+                <p>who have the sweetest smile that i ever seen.</p>
+                <p>Happy Birthday 🎉🎉🎉 Happy Birthday 🎉🎉🎉</p>
+                <p>I'm grateful that you're born in this world,</p>
+                <p>and you're amongs of billions people.</p>
+            </div>
+            <a href="#" class="btn">Hidden</a>
         </figcaption>
     </main>
-    <section id="video">
+    <!-- <section id="video">
         <div class="container d-flex">
             <div class="box">
-                <p id="myElement"></p>
+                <span id="element"></span>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 
     <!-- The script itself, loaded AFTER your root element. -->
-    <script src="https://unpkg.com/typeit@@{TYPEIT_VERSION}/dist/index.umd.js"></script>
-    <script>
-      new TypeIt("#myElement", {
-        strings: "This is what will be typed!",
-      }).go();
-    </script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
     <!-- 👇 javascript code file 👇 -->
     <script src="./src/js/index.js"></script>
 </body>

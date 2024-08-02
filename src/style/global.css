@@ -7,6 +7,7 @@ body {
   box-sizing: border-box;
   text-decoration: none;
   transition: all .3s ease-in-out;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -53,7 +54,82 @@ main figcaption h1 {
   font-size: 1.5rem;
 }
 
-#video {
+main figcaption button {
+  display: none;
+}
+
+main #element {
+  font-size: 1.1rem;
+}
+
+.card-msg-detail {
+  font-weight: 500;
+  font-size: 1.1rem;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all .3s ease-in-out;
+  padding: 1em;
+  border-radius: 8px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,.3);
+  display: none;
+}
+
+.card-msg-detail.show {
+  transform: translateY(0);
+  opacity: 1;
+  display: block;
+}
+
+.card-msg-detail p {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  transition: 0.3s ease-in-out;
+  line-height: 1.5em;
+}
+
+@keyframes typing {
+  to {
+    width: 100%;
+  }
+}
+
+.card-msg-detail p:first-child.popUp {
+  animation: typing 3s steps(42, end) forwards;
+}
+
+.card-msg-detail p:nth-child(2).popUp {
+  animation: typing 3s steps(39, end) forwards 3.1s;
+}
+
+.card-msg-detail p:nth-child(3).popUp {
+  animation: typing 3s steps(32, end) forwards 6.1s;
+}
+
+.card-msg-detail p:nth-child(4).popUp {
+  animation: typing 3s steps(29, end) forwards 9.1s;
+}
+
+.card-msg-detail p:nth-child(5).popUp {
+  animation: typing 3s steps(45, end) forwards 12.1s;
+}
+
+.card-msg-detail p:nth-child(6).popUp {
+  animation: typing 3s steps(37, end) forwards 15.1s;
+}
+
+.card-msg-detail p:nth-child(7).popUp {
+  animation: typing 3s steps(44, end) forwards 18.1s;
+}
+
+.card-msg-detail p:last-child.popUp {
+  animation: typing 3s steps(37, end) forwards 21.1s;
+}
+
+/* #video {
   width: 100%;
   height: 100vh;
   background: rgba(0,0,0,.9);
@@ -67,8 +143,6 @@ main figcaption h1 {
 }
 
 #video .box {
-  width: 300px;
-  height: 300px;
   color: #ffff;
   border-radius: 10px;
-}
+} */

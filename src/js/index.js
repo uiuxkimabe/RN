@@ -5,17 +5,29 @@ const hour = document.querySelector('.hour')
 const minute = document.querySelector('.minute')
 const second = document.querySelector('.second')
 const timeBlock = document.querySelectorAll('.time')
-const video = document.querySelector('#video')
+const titleBirthday = document.querySelector('.titleBirthday')
+const cardMsg = document.querySelector('.card-msg-detail')
+const cardMsgParagraf = document.querySelectorAll('.card-msg-detail p')
+const typingElement = document.querySelector('span#element')
+const btnHidden = document.querySelector('main figcaption a.btn')
+const music = document.getElementsByTagName('audio')[0]
 
+// Function typing
+function typing() {
+    let typed = new Typed('#element', {
+        strings: ['<i>For you</i>','Who have the initial <strong>RN</strong>','Who love watching Upin / Ipin','Who mix betawi and sumatra','Who have the beauty chocolate eyes'],
+        typeSpeed: 30,
+    });
+    return typed
+}
 
 // Selection tahun
 const currentYear = new Date().getFullYear();
 
 // Waktu Ulang Tahun
-const birthdayTime = new Date(`July 31 ${currentYear} 00:00:00`)
+const birthdayTime = new Date(`August 3 ${currentYear} 01:17:00`)
 
 // Update Countdown Time
-
 function updateCountdown() {
     const currentTime = new Date();
     const diff = birthdayTime - currentTime
@@ -38,8 +50,16 @@ function updateCountdown() {
         timeBlock[1].style.display = 'none'
         timeBlock[2].style.display = 'none'
     } else if (m <= 0 && s <= 1) {
-        video.classList.add('show')
-        // console.info(birthdayTime)
+        cardMsg.classList.add('show')
+        cardMsgParagraf.forEach(element => {
+            element.classList.add('popUp')
+        });
+        titleBirthday.style.display = 'none'
+        btnHidden.style.display = 'block'
+        timeBlock.forEach(blockTimer => {
+            blockTimer.style.display = 'none'
+        });
+        console.info(birthdayTime)
         setTimeout(() => {
             const end = Date.now() + 15 * 50;
 
@@ -69,7 +89,13 @@ function updateCountdown() {
             })();
         }, 1000);
     }
-
+    
 }
 
-setInterval(updateCountdown, 1000)
+const counting = setInterval(updateCountdown, 1000)
+
+btnHidden.addEventListener('click', () => {
+    clearInterval(counting)
+    titleBirthday.style.display = 'none'
+    typing()
+})
