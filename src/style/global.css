@@ -51,6 +51,8 @@ main {
 .head-greating img {
   max-width: 150px;
   margin-bottom: 1em;
+  position: relative;
+  z-index: 999;
 }
 
 main figcaption .titleBirthday {
