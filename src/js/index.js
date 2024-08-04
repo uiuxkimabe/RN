@@ -5,7 +5,7 @@ const hour = document.querySelector('.hour')
 const minute = document.querySelector('.minute')
 const second = document.querySelector('.second')
 const timeBlock = document.querySelectorAll('.time')
-const titleBirthday = document.querySelectorAll('.titleBirthday')
+const titleBirthday = document.querySelector('.titleBirthday')
 const cardMsg = document.querySelector('.card-msg-detail')
 const cardMsgParagraf = document.querySelectorAll('.card-msg-detail p')
 const typingElement = document.querySelector('span#element')
@@ -25,7 +25,7 @@ function typing() {
 const currentYear = new Date().getFullYear();
 
 // Waktu Ulang Tahun
-const birthdayTime = new Date(`August 4 ${currentYear} 11:15:00`)
+const birthdayTime = new Date(`August 4 ${currentYear} 11:17:00`)
 
 // Update Countdown Time
 function updateCountdown() {
@@ -54,11 +54,9 @@ function updateCountdown() {
         cardMsgParagraf.forEach(element => {
             element.classList.add('popUp')
         });
+        titleBirthday.style.display ='none'
         timeBlock.forEach(blockTimer => {
             blockTimer.style.display = 'none'
-        });
-        titleBirthday.forEach(elementtitle => {
-            elementtitle.style.display = 'none'
         });
         console.info(birthdayTime)
         setTimeout(() => {
