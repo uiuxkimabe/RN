@@ -25,7 +25,7 @@ function typing() {
 const currentYear = new Date().getFullYear();
 
 // Waktu Ulang Tahun
-const birthdayTime = new Date(`August 4 ${currentYear} 11:10:00`)
+const birthdayTime = new Date(`August 4 ${currentYear} 11:15:00`)
 
 // Update Countdown Time
 function updateCountdown() {
@@ -54,7 +54,6 @@ function updateCountdown() {
         cardMsgParagraf.forEach(element => {
             element.classList.add('popUp')
         });
-        titleBirthday.style.display = 'none'
         timeBlock.forEach(blockTimer => {
             blockTimer.style.display = 'none'
         });
