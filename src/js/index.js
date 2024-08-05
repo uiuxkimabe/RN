@@ -1,5 +1,5 @@
 // countdown
-
+const main = document.querySelector('main')
 const days = document.querySelector('.days')
 const hour = document.querySelector('.hour')
 const minute = document.querySelector('.minute')
@@ -27,10 +27,20 @@ function typing() {
 const currentYear = new Date().getFullYear();
 
 // Waktu Ulang Tahun
-const birthdayTime = new Date(`August 5 ${currentYear} 01:37:00`)
+const birthdayTime = new Date(`August 5 ${currentYear} 22:12:00`)
 
 // Waktu Selesai Kembang Api
-const birthdayPass = new Date(`August 5 ${currentYear} 01:37:30`)
+// const birthdayPass = new Date(`August 5 ${currentYear} 01:37:30`)
+
+function fullScreen() {
+    if (main.requestFullscreen) {
+        main.requestFullscreen();
+    } else if (main.webkitRequestFullscreen) {
+        main.webkitRequestFullscreen(); // Safari
+    } else if (main.msRequestFullscreen) {
+        main.msRequestFullscreen(); // IE11
+    }
+}
 
 // Update Countdown Time
 function updateCountdown() {
@@ -55,6 +65,7 @@ function updateCountdown() {
         timeBlock[1].style.display = 'none'
         timeBlock[2].style.display = 'none'
     } else if (m <= 0 && s <= 1) {
+        fullScreen()
         cardMsg.classList.add('show')
         cardMsgParagraf.forEach(element => {
             element.classList.add('popUp')
