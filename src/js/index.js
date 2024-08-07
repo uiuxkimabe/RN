@@ -6,19 +6,22 @@ const minute = document.querySelector('.minute')
 const second = document.querySelector('.second')
 const timeBlock = document.querySelectorAll('.time')
 const titleBirthday = document.querySelector('.titleBirthday')
-const cardMsg = document.querySelector('.card-msg-detail')
+const cardMsgDetail = document.querySelector('.card-msg-detail')
 const cardMsgParagraf = document.querySelectorAll('.card-msg-detail p')
 const typingElement = document.querySelector('span#element')
-const btnHidden = document.querySelector('.card-msg-detail .btnLink')
-const music = document.getElementsByTagName('audio')[0]
+const btnHidden = document.querySelector('.btn-notif .btnLink')
+const audio = document.getElementsByTagName('audio')[0]
 const gifImg = document.querySelector('.head-greating img')
+const headGreating = document.querySelector('.head-greating')
+const btnNotif = document.querySelector('.btn-notif')
 
 // Function typing
 function typing() {
     let typed = new Typed('#element', {
         strings: ['<i>For you</i>','Who have the initial <strong>RN</strong>','Who love watching Upin / Ipin','Who mix betawi and sumatra','Who have the beauty chocolate eyes'],
         typeSpeed: 30,
-        loopCount: Infinity,
+        fadeOut: true,
+        loop: true
     });
     return typed
 }
@@ -27,20 +30,8 @@ function typing() {
 const currentYear = new Date().getFullYear();
 
 // Waktu Ulang Tahun
-const birthdayTime = new Date(`August 5 ${currentYear} 22:12:00`)
+const birthdayTime = new Date(`August 7 ${currentYear} 08:42:00`)
 
-// Waktu Selesai Kembang Api
-// const birthdayPass = new Date(`August 5 ${currentYear} 01:37:30`)
-
-function fullScreen() {
-    if (main.requestFullscreen) {
-        main.requestFullscreen();
-    } else if (main.webkitRequestFullscreen) {
-        main.webkitRequestFullscreen(); // Safari
-    } else if (main.msRequestFullscreen) {
-        main.msRequestFullscreen(); // IE11
-    }
-}
 
 // Update Countdown Time
 function updateCountdown() {
@@ -65,55 +56,65 @@ function updateCountdown() {
         timeBlock[1].style.display = 'none'
         timeBlock[2].style.display = 'none'
     } else if (m <= 0 && s <= 1) {
-        fullScreen()
-        cardMsg.classList.add('show')
-        cardMsgParagraf.forEach(element => {
-            element.classList.add('popUp')
+        showInTime() 
+        setTimeout(() => {
+        const end = Date.now() + 15 * 50;
+
+        // go Buckeyes!
+        const colors = ["#46c6dd", "#fa1ba4"];
+
+        (function frame() {
+        confetti({
+            particleCount: 2,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: colors,
         });
-        titleBirthday.style.display = 'none'
-        gifImg.setAttribute('src','./src/gif/gif-1.gif')
-        timeBlock.forEach(blockTimer => {
-            blockTimer.style.display = 'none'
+
+        confetti({
+            particleCount: 2,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: colors,
         });
-        setTimeout(() => {
-            const end = Date.now() + 15 * 50;
 
-            // go Buckeyes!
-            const colors = ["#46c6dd", "#fa1ba4"];
-
-            (function frame() {
-            confetti({
-                particleCount: 2,
-                angle: 60,
-                spread: 55,
-                origin: { x: 0 },
-                colors: colors,
-            });
-
-            confetti({
-                particleCount: 2,
-                angle: 120,
-                spread: 55,
-                origin: { x: 1 },
-                colors: colors,
-            });
-
-            if (Date.now() < end) {
-                requestAnimationFrame(frame);
-            }
-            })();
-        }, 1000);
-        setTimeout(() => {
-            const sectionVideo = document.querySelector('#video')
-            sectionVideo.style.display = 'block'
-            clearInterval(counting)
-        }, 24300);
-        setTimeout(() => {
-           btnHidden.style.display = 'block' 
-        }, 24610);
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+        })();
+    }, 1000);
     }
 
 }
+
+function showInTime() {
+    timeBlock.forEach(blockTimer => {
+        blockTimer.style.display = 'none'
+    });
+    btnHidden.style.display = 'block'
+    titleBirthday.innerHTML = 'HBD Raniii 🎉🥳'
+    gifImg.setAttribute('src','./src/gif/gif-3.gif')
+}
+
+btnHidden.addEventListener('click', () => {
+    cardMsgDetail.classList.add('show')
+    btnNotif.style.display = 'none'
+    cardMsgParagraf.forEach(element => {
+        element.classList.add('popUp')
+    });
+    audio.play()
+    headGreating.style.display = 'none'
+    setTimeout(() => {
+        const sectionVideo = document.querySelector('#video')
+        sectionVideo.style.display = 'block'
+        clearInterval(counting)
+    }, 24610);
+    setTimeout(() => {
+        document.querySelector('main .nextPage').style.display = 'block'
+    }, 24630);
+})
 
 const counting = setInterval(updateCountdown, 1000)
 

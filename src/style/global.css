@@ -31,6 +31,10 @@ body {
   justify-content: center;
 }
 
+.d-grid {
+  display: grid;
+}
+
 /* main */
 
 main {
@@ -44,6 +48,12 @@ main.go {
   background: url();
 }
 
+@keyframes bgAnimate {
+  0% {
+    background: ;
+  }
+}
+
 .head-greating {
   display: flex;
   flex-direction: column;
@@ -54,10 +64,10 @@ main.go {
 
 .head-greating img {
   max-width: 150px;
-  margin-bottom: .5em;
+  margin-bottom: 1em;
   position: relative;
   z-index: 999;
-  animation: zoomout .3s ease-in-out infinite alternate-reverse;
+  animation: zoomout .5s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes zoomout {to {transform: scale(.9);}}
@@ -70,20 +80,12 @@ main figcaption .titleBirthday {
 
 .countdown {
   justify-content: space-evenly;
-  margin: 1em 0;
+  /* margin: 1.5em 0; */
 }
 
 .time {
   text-align: center;
   font-size: 1.5rem;
-}
-
-main figcaption button {
-  display: none;
-}
-
-main #element {
-  font-size: 1.1rem;
 }
 
 .card-msg-detail {
@@ -123,47 +125,71 @@ main #element {
   }
 }
 
-.card-msg-detail p:first-child.popUp {
-  animation: typing 3s steps(42, end) forwards;
+.card-msg-detail img {
+  max-width: 150px;
+  animation: zoomout .5s ease-in-out infinite alternate-reverse;
 }
 
 .card-msg-detail p:nth-child(2).popUp {
-  animation: typing 3s steps(39, end) forwards 3.1s;
+  animation: typing 3s steps(42, end) forwards;
 }
 
 .card-msg-detail p:nth-child(3).popUp {
-  animation: typing 3s steps(32, end) forwards 6.1s;
+  animation: typing 3s steps(39, end) forwards 3.1s;
 }
 
 .card-msg-detail p:nth-child(4).popUp {
-  animation: typing 3s steps(21, end) forwards 9.1s;
+  animation: typing 3s steps(32, end) forwards 6.1s;
 }
 
 .card-msg-detail p:nth-child(5).popUp {
-  animation: typing 3s steps(28, end) forwards 12.1s;
+  animation: typing 3s steps(21, end) forwards 9.1s;
 }
 
 .card-msg-detail p:nth-child(6).popUp {
-  animation: typing 3s steps(34, end) forwards 15.1s;
+  animation: typing 3s steps(28, end) forwards 12.1s;
 }
 
 .card-msg-detail p:nth-child(7).popUp {
-  animation: typing 3s steps(44, end) forwards 18.1s;
+  animation: typing 3s steps(34, end) forwards 15.1s;
 }
 
 .card-msg-detail p:nth-child(8).popUp {
+  animation: typing 3s steps(44, end) forwards 18.1s;
+}
+
+.card-msg-detail p:nth-child(9).popUp {
   animation: typing 3s steps(37, end) forwards 21.1s;
 }
 
-.card-msg-detail .btnLink {
+.btn-notif {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.btn-notif button.btnLink {
   display: none;
-  padding: .5em;
+  padding: .8em;
+  font-size: 1.2rem;
   width: 100%;
   margin-top: 1em;
   background-color: #000;
   color: #fff;
   border-radius: 10px;
+  border: none;
 }
+
+.nextPage {
+  display: none;
+  padding: .8em;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border-radius: 10px;
+  margin-top: 1em;
+}
+
+/* Section Video */
 
 #video {
   width: 100%;
@@ -173,3 +199,7 @@ main #element {
   color: #fff;
 }
 
+#video .container {
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 2em;
+}
