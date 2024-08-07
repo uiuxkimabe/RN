@@ -48,11 +48,11 @@ main.go {
   background: url();
 }
 
-@keyframes bgAnimate {
+/* @keyframes bgAnimate {
   0% {
     background: ;
   }
-}
+} */
 
 .head-greating {
   display: flex;
@@ -193,13 +193,34 @@ main figcaption .titleBirthday {
 
 #video {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   background: rgba(0,0,0,.9);
-  display: none;
+  /* display: none; */
   color: #fff;
 }
 
-#video .container {
+#video h1 {
+  font-size: 2rem;
+}
+
+#video .container .captions {
   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
   gap: 2em;
+  align-items: center;
+  padding: 1em 0;
+}
+
+#video .box-img {
+  height: 300px;
+  border: 1px solid white;
+}
+
+#video .mark-border {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #0099ff;
+}
+
+#video .mark-blue {
+  font-style: italic;
+  color: #0099ff;
 }

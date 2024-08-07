@@ -14,6 +14,7 @@ const audio = document.getElementsByTagName('audio')[0]
 const gifImg = document.querySelector('.head-greating img')
 const headGreating = document.querySelector('.head-greating')
 const btnNotif = document.querySelector('.btn-notif')
+const nextPage = document.querySelector('.nextPage')
 
 // Function typing
 function typing() {
@@ -98,6 +99,7 @@ function showInTime() {
     gifImg.setAttribute('src','./src/gif/gif-3.gif')
 }
 
+
 btnHidden.addEventListener('click', () => {
     cardMsgDetail.classList.add('show')
     btnNotif.style.display = 'none'
@@ -112,7 +114,7 @@ btnHidden.addEventListener('click', () => {
         clearInterval(counting)
     }, 24610);
     setTimeout(() => {
-        document.querySelector('main .nextPage').style.display = 'block'
+        nextPage.style.display = 'block'
     }, 24630);
 })
 
