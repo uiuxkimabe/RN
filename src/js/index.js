@@ -19,10 +19,12 @@ const nextPage = document.querySelector('.nextPage')
 // Function typing
 function typing() {
     let typed = new Typed('#element', {
-        strings: ['<i>For you</i>','Who have the initial <strong>RN</strong>','Who love watching Upin / Ipin','Who mix betawi and sumatra','Who have the beauty chocolate eyes'],
+        strings: ['<i>Suatu hari, tepatnya pada 13 Agustus</i>','lahirlah seorang wanita cantik di sebuah daerah di Bogor','Panggilannya <strong>Rani</strong>','Suatu hari, Rani diundang ke kahyangan','Katanya dia di panggil oleh raja Awan.','Sampai disana Rani ditanya tentang hari paling indah','"Hari apa yang paling indah Rani ? Kalo kamu bisa jawab kamu akan mendapat hadiah"','Hadiah apa wahai raja ?, Tanya Rani','Dia lah obat kebahagian','Di mana ada hadiah semacam itu ?, tanya Rani pada raja awan','Tentu ada, dia obat yang akan membuat mu kuat, sehat dan penuh semangat','Dimana saya bisa dapat itu raja ?, sahut Rani','Ada di dalam keranjang !','Ketika Rani membuka dia menemukan puyer bintang 7 di dalam keranjang, lalu tersenyum dan bertanya pada raja, Mengapa obat semacam ini jadi obat bahagia ?','Karena obat ini bisa membuatmu bingung, tersenyum, dan menjadikan hari ini menjadi hari paling indah, hari saat kamu tambah usia dengan hati bahagia.','Selamat tambah usia Raniah Nurfadilah','It\'s mean a lot, the world feel better, ketika kamu bahagia di hari lahirmu.','Wish you all the best... 🙏🙏🙏'],
         typeSpeed: 30,
         fadeOut: true,
-        loop: true
+        loop: true,
+        backDelay: 1500,
+        showCursor: false
     });
     return typed
 }
@@ -120,6 +122,6 @@ btnHidden.addEventListener('click', () => {
 
 const counting = setInterval(updateCountdown, 1000)
 
-btnHidden.addEventListener('click', () => {
+nextPage.addEventListener('click', () => {
     setTimeout(typing(),3000)
 })
