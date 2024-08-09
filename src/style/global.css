@@ -205,10 +205,17 @@ main figcaption .titleBirthday {
 
 #video .container .captions {
   gap: 2em;
-  padding: 1em 0;
-  overflow: hidden;
+  padding: 2em 0;
+  margin-top: 3em;
   justify-content: flex-start;
   animation: infinites-scroll .3s linear infinite;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  /* border: 1px solid white; */
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 @keyframes infinite-scroll {
@@ -240,7 +247,7 @@ main figcaption .titleBirthday {
   height: 300px;
   margin: 1em 0;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   padding: 1em;
 }
 
@@ -256,6 +263,44 @@ main figcaption .titleBirthday {
 
 .captions .photo-card {
   flex: 0 0 300px;
+  transform-origin: top center;
+}
+
+.captions .photo-card:first-child {
+  animation: photo-shake 3s ease-in-out infinite alternate;
+}
+
+.captions .photo-card:nth-child(2) {
+  animation: photo-shake 3s ease-in-out .3s infinite alternate;
+}
+
+.captions .photo-card:nth-child(3) {
+  animation: photo-shake 3s ease-in-out .6s infinite alternate;
+}
+
+.captions .photo-card:nth-child(4) {
+  animation: photo-shake 3s ease-in-out .9s infinite alternate;
+}
+
+.captions .photo-card:nth-child(5) {
+  animation: photo-shake 3s ease-in-out 1.2s infinite alternate;
+}
+
+.captions .photo-card:nth-child(6) {
+  animation: photo-shake 3s ease-in-out 1.5s infinite alternate;
+}
+
+
+@keyframes photo-shake {
+  0% {
+    transform: rotate(0)
+  } 
+  50% {
+    transform: rotate(-10deg)
+  } 
+  100% {
+    transform: rotate(10deg)
+  }
 }
 
 .captions .box-media img, .box-media video {
@@ -268,4 +313,9 @@ main figcaption .titleBirthday {
   text-align: center;
   background-color: #fff;
   color: #000;
+}
+
+#video .moment {
+  margin: 2em 0;
+  text-align: center;
 }
