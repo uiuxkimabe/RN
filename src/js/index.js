@@ -23,7 +23,7 @@ function typing() {
         typeSpeed: 30,
         fadeOut: true,
         loop: true,
-        backDelay: 1800,
+        backDelay: 2000,
         showCursor: false
     });
     return typed
@@ -123,5 +123,5 @@ btnHidden.addEventListener('click', () => {
 const counting = setInterval(updateCountdown, 1000)
 
 nextPage.addEventListener('click', () => {
-    setTimeout(typing(),3000)
+    setTimeout(typing(),4000)
 })

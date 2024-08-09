@@ -319,3 +319,9 @@ main figcaption .titleBirthday {
   margin: 2em 0;
   text-align: center;
 }
+
+/* footer */
+footer {
+  padding: 1em 0;
+  text-align: center;
+}
