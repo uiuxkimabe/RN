@@ -19,12 +19,13 @@ const nextPage = document.querySelector('.nextPage')
 // Function typing
 function typing() {
     let typed = new Typed('#element', {
-        strings: ['<i>Suatu hari, tepatnya pada 13 Agustus</i>','<i>lahirlah seorang wanita cantik di sebuah daerah di Bogor</i>','<i>Panggilannya <strong>Rani</strong><i/>','<i>Suatu hari, Rani diundang ke kahyangan</i>','<i>Katanya dia di panggil oleh raja Awan.</i>','<i>Sampai disana Rani ditanya tentang hari paling indah<i/>','<i>"Hari apa yang paling indah Rani ? Kalo kamu bisa jawab kamu akan mendapat hadiah"</i>','<i>Hadiah apa wahai raja ?, Tanya Rani<i/>','<i>Dia lah obat kebahagian</i>','<i>Di mana ada hadiah semacam itu ?, tanya Rani pada raja awan</i>','<i>Tentu ada, dia obat yang akan membuat mu kuat, sehat dan penuh semangat<i/>','<i>Dimana saya bisa dapat itu raja ?, sahut Rani</i>','<i>Ada di dalam keranjang !</i>','<i>Ketika Rani membuka, dia menemukan puyer bintang 7</i>', '<i>lalu bertanya pada raja, Mengapa puyer bintang 7 ?</i>','<i>Karena obat ini bisa membuatmu bingung, tersenyum, dan menjadikan hari ini menjadi hari paling indah, hari saat Rani tambah usia dengan hati bahagia.</i>','<i>Selamat tambah usia Raniah Nurfadilah...</i>','<i>It\'s mean a lot, the world feel better, ketika kamu bahagia di hari lahirmu.</i>','<i>Sehat selalu, sukses dan panjang umur</i>','<i>Wish you all the best... 🙏🙏🙏</i>'],
-        typeSpeed: 30,
+        strings: ['<i>Dear, Raniah Nurfadilah...</i>','<i>Hari ini, 13 Agustus, hari lahir kamu.</i>','<i>Bayangin deh, rasanya kayak baru lahir kemaren ga sih 🤔, dan sekarang.., <strong>menginjak dewasa hahaha...</strong>','btw sekarang udah 20 tahun, kan ?<i/>','<i>Takut salah nyebut angka soalnya hehe</i>','<i>karna berapapun usia Rani, berani taruhan. Wajahnya pasti baby face, awet muda coy 😁</i>','<i>Sorry yaa...., basa basinya emang garing hehe...</i>','<i>maklum, emang kadang, aku mah jarinya lebih pinter ngomong daripada mulut, iishh payah emang..<i/>','<i>Tapiii, semoga ini ga ngurangin khidmatnya ucapan langsung ya..</i>','<i>Ran..., sehat dan panjang umur yaa..<i/>','<i>Makasih banyak udah jadi pribadi yang menginspirasi.</i>','<i>Makasih udah jadi pribadi yang kuat,</i>','<i>Makasih udah jadi pribadi yang mandiri<i/>','<i>Ga ada lagi selain makasih yang bisa disampain</i>','<i>Ga tau kenapa, menurut aku mah, kamu layak untuk di apresiasi, buat hidup, perjalanan Rani sampai di titik ini.</i>','<i>Ran..., boleh ya nitip pesen..</i>', '<i>Ran..., kedepan, jadi dewasa kita ga pernah tau soal sesuatu itu mudah atau susah sampai kita ngalamin, hadepin ketakutan itu sendiri</i>','<i>Nanti kita baru akan sadar kalo jalan yang kita ambil itu luar biasa indah.</i>','<i>Setiap keputusan yang diambil nanti, pasti diluar ekspektasi</i>','<i>Dan Allah, selalu ngerencanain semuanya sesuai porsi dan waktunya</i>','<i>Mencapai sesuatu itu ga gampang, tapi bukan berarti mustahil.</i>','<i>Suatu saat kita pasti ngalamin gagal, itu bukan "What if" tapi "When ?"</i>','<i>Dan orang yang kuat, pasti nerima keadaan baik dan buruknya</i>','<i>Jadi terus semangat ya cantikkkkkk, Good luck with your process</i>','Life isn\'t easy','Trust to Allah, the one and only', 'Stay stronger, braver, hopeful heart, graceful and cool 😎','Sekali lagi....','Selamat ulang tahun Raniah...','Wish you all the best ✨✨','Udah, aku nitip itu aja..'],
+        typeSpeed: 40,
         fadeOut: true,
-        loop: true,
-        backDelay: 2000,
-        showCursor: false
+        // loop: true,
+        backDelay: 2500,
+        showCursor: false,
+        smartBackspace: true
     });
     return typed
 }
@@ -33,7 +34,7 @@ function typing() {
 const currentYear = new Date().getFullYear();
 
 // Waktu Ulang Tahun
-const birthdayTime = new Date(`August 7 ${currentYear} 08:42:00`)
+const birthdayTime = new Date(`August 09 ${currentYear} 23:45:00`)
 
 
 // Update Countdown Time
@@ -103,12 +104,12 @@ function showInTime() {
 
 
 btnHidden.addEventListener('click', () => {
+    audio.play()
     cardMsgDetail.classList.add('show')
     btnNotif.style.display = 'none'
     cardMsgParagraf.forEach(element => {
         element.classList.add('popUp')
     });
-    audio.play()
     headGreating.style.display = 'none'
     setTimeout(() => {
         const sectionVideo = document.querySelector('#video')
@@ -123,5 +124,5 @@ btnHidden.addEventListener('click', () => {
 const counting = setInterval(updateCountdown, 1000)
 
 nextPage.addEventListener('click', () => {
-    setTimeout(typing(),4000)
+    setTimeout(typing(),5000)
 })
