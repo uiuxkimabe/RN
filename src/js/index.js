@@ -15,6 +15,7 @@ const gifImg = document.querySelector('.head-greating img')
 const headGreating = document.querySelector('.head-greating')
 const btnNotif = document.querySelector('.btn-notif')
 const nextPage = document.querySelector('.nextPage')
+const footer = document.querySelector('footer')
 
 // Function typing
 function typing() {
@@ -23,7 +24,7 @@ function typing() {
         typeSpeed: 40,
         fadeOut: true,
         // loop: true,
-        backDelay: 2500,
+        backDelay: 3000,
         showCursor: false,
         smartBackspace: true
     });
@@ -61,6 +62,7 @@ function updateCountdown() {
         timeBlock[2].style.display = 'none'
     } else if (m <= 0 && s <= 1) {
         showInTime() 
+        footer.style.display = 'block'
         setTimeout(() => {
         const end = Date.now() + 15 * 50;
 

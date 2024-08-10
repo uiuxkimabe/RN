@@ -240,7 +240,7 @@ main figcaption .titleBirthday {
 
 .slider-name .slide-photo {
   border: 1px solid #fff;
-  height: 300px;
+  height: 600px;
   margin: 1em 0;
   justify-content: center;
   align-items: center;
@@ -320,4 +320,5 @@ main figcaption .titleBirthday {
 footer {
   padding: 1em 0;
   text-align: center;
+  display: none;
 }
