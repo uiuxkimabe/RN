@@ -41,7 +41,7 @@ function typing() {
 const currentYear = new Date().getFullYear();
 
 // Waktu Ulang Tahun
-const birthdayTime = new Date(`August 12 ${currentYear} 01:11:00`)
+const birthdayTime = new Date(`August 12 ${currentYear} 01:30:00`)
 
 
 // Update Countdown Time
