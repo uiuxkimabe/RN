@@ -75,7 +75,7 @@ main figcaption .titleBirthday {
 
 .time {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .card-msg-detail {
@@ -321,4 +321,8 @@ footer {
   padding: 1em 0;
   text-align: center;
   display: none;
+}
+
+footer.show {
+  display: block;
 }

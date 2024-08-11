@@ -23,7 +23,7 @@ const footer = document.querySelector('footer')
 // Function typing
 function typing() {
     let typed = new Typed('#element', {
-        strings: ['<i>Dear, Raniah Nurfadilah...</i>','<i>Hari ini, 13 Agustus, hari lahir kamu.</i>','<i>Bayangin deh, rasanya kayak baru lahir kemaren ga sih 🤔',' <i>Dan sekarang.., <strong>menginjak dewasa hahaha...</strong></i>','btw sekarang udah 20 tahun, kan ?<i/>','<i>Maaf yaa Raan...., basa basinya emang garing hehe...</i>','<i>maklum, emang kadang, aku mah jarinya lebih pinter ngomong daripada mulut, payah emang.. 😓<i/>','<i>Semoga ini ga ngurangin khidmatnya ucapin langsung ya..</i>','Ran...','<i>Terus sehat dan panjang umur yaa..<i/>','<i>Makasih banyak udah jadi orang yang menginspirasi.</i>','<i>Makasih udah jadi pribadi yang kuat,</i>','<i>Makasih udah jadi pribadi, yang mandiri<i/>','<i>Ran.., kamu hebat..</i>','<i>Makasih, cuma itu yang bisa aku sampein</i>','<i>Aku pengen apresiasi Rani, buat perjuangannya sampai di titik ini.</i>','<i>Ran..., boleh ya nitip pesen..</i>', '<i>Ran..., kedepan, kita ga pernah tau soal sesuatu itu mudah atau susah sampai kita ngalamin, hadepin ketakutan itu sendiri</i>','<i>Nanti kita akan sadar kalo jalan yang kita ambil itu luar biasa indah.</i>','<i>Setiap keputusan yang kita ambil nanti, pasti diluar ekspektasi</i>','<i>Tapi Allah, selalu ngerencanain semuanya sesuai bagian dan waktunya ran..</i>','<i>Ran.., Mencapai sesuatu juga ga gampang, tapi bukan berarti mustahil.</i>','<i>Suatu saat kita juga pasti ngalamin gagal, itu bukan "What if" tapi "When ?"</i>','<i>Dan orang yang kuat, pasti nerima keadaan apapun mau baik ataupun buruk</i>','<i>Jadi.., terus semangat ya cantikkkkkk, Good luck with your process</i>','Life isn\'t easy','Trust to Allah, the one and only', 'Stay stronger, braver, hopeful heart, graceful and cool 😎','Sekali lagi....','Selamat ulang tahun ya, Raniah...'],
+        strings: ['<i>Dear, Raniah Nurfadilah...</i>','<i>Hari ini, 13 Agustus, hari lahir kamu.</i>','<i>Bayangin deh, rasanya kayak baru lahir kemaren ga sih 🤔',' <i>Dan sekarang.., <strong>menginjak dewasa hahaha...</strong></i>','btw sekarang udah 20 tahun, kan ?<i/>','<i>Maaf yaa Raan...., basa basinya emang garing hehe...</i>','<i>maklum, emang kadang, aku mah jarinya lebih pinter ngomong daripada mulut, payah emang.. 😓<i/>','<i>Semoga ini ga ngurangin khidmatnya ucapin langsung ya..</i>','Ran...','<i>Terus sehat dan panjang umur yaa..<i/>','<i>Makasih banyak udah jadi orang yang menginspirasi.</i>','<i>Makasih udah jadi pribadi yang kuat,</i>','<i>Makasih udah jadi pribadi, yang mandiri<i/>','<i>Seneng.., bisa kenal kamu</i>','<i>Ran.., kamu hebat..</i>','<i>Makasih, cuma itu yang bisa aku sampein</i>','<i>Aku pengen apresiasi Rani, buat perjuangannya sampai di titik ini.</i>','<i>Ran..., boleh ya nitip pesen..</i>', '<i>Ran..., kedepan, kita ga pernah tau soal sesuatu itu mudah atau susah sampai kita ngalamin, hadepin ketakutan itu sendiri</i>','<i>Nanti kita akan sadar kalo jalan yang kita ambil itu luar biasa indah.</i>','<i>Setiap keputusan yang kita ambil nanti, pasti diluar ekspektasi</i>','<i>Tapi Allah, selalu ngerencanain semuanya sesuai bagian dan waktunya ran..</i>','<i>Ran.., Mencapai sesuatu juga ga gampang, tapi bukan berarti mustahil.</i>','<i>Suatu saat kita juga pasti ngalamin gagal, itu bukan "What if" tapi "When ?"</i>','<i>Dan orang yang kuat, pasti nerima keadaan apapun mau baik ataupun buruk</i>','<i>Jadi.., terus semangat ya cantikkkkkk, Good luck with your process</i>','Life isn\'t easy','Trust to Allah, the one and only', 'Stay stronger, braver, hopeful heart, graceful and cool 😎','Sekali lagi....','Selamat ulang tahun ya, Raniah...'],
         typeSpeed: 40,
         fadeOut: true,
         // loop: true,
@@ -111,7 +111,7 @@ function showInTime() {
 
 btnLink.addEventListener('click', () => {
     audio.play()
-    audio.volume = .4
+    audio.volume = .6
     cardMsgDetail.classList.add('show')
     btnNotif.style.display = 'none'
     cardMsgParagraf.forEach(element => {
@@ -120,12 +120,12 @@ btnLink.addEventListener('click', () => {
     headGreating.style.display = 'none'
     setTimeout(() => {
         sectionVideo.style.display = 'block'
-        footer.style.display = 'block'
-        btnP
+        footer.classList.add('show')
+        btnP.style.display = 'none'
         clearInterval(counting)
     }, 24610);
     setTimeout(() => {
-        audio.volume = 0.6;
+        audio.volume = 0.4;
         nextPage.style.display = 'block'
     }, 24630);
 })
