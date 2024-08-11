@@ -64,7 +64,7 @@ main {
 
 main figcaption .titleBirthday {
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -240,7 +240,7 @@ main figcaption .titleBirthday {
 
 .slider-name .slide-photo {
   border: 1px solid #fff;
-  height: 600px;
+  height: 500px;
   margin: 1em 0;
   justify-content: center;
   align-items: center;

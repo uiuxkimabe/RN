@@ -15,12 +15,13 @@ const gifImg = document.querySelector('.head-greating img')
 const headGreating = document.querySelector('.head-greating')
 const btnNotif = document.querySelector('.btn-notif')
 const nextPage = document.querySelector('.nextPage')
+const sectionVideo = document.querySelector('#video')
 const footer = document.querySelector('footer')
 
 // Function typing
 function typing() {
     let typed = new Typed('#element', {
-        strings: ['<i>Dear, Raniah Nurfadilah...</i>','<i>Hari ini, 13 Agustus, hari lahir kamu.</i>','<i>Bayangin deh, rasanya kayak baru lahir kemaren ga sih 🤔, dan sekarang.., <strong>menginjak dewasa hahaha...</strong>','btw sekarang udah 20 tahun, kan ?<i/>','<i>Takut salah nyebut angka soalnya hehe</i>','<i>Tapi berapapun usia Rani, berani taruhan. Wajahnya tetep cantik titik. alah gombal 😁</i>','<i>Sorry yaa...., basa basinya emang garing hehe...</i>','<i>maklum, emang kadang, aku mah jarinya lebih pinter ngomong daripada mulut, payah emang.. 😓<i/>','<i>Tapiii, semoga ini ga ngurangin khidmatnya ucapan langsung ya..</i>','Ran...','<i>Terus sehat dan panjang umur yaa..<i/>','<i>Makasih banyak udah jadi orang yang menginspirasi.</i>','<i>Makasih udah jadi pribadi yang kuat,</i>','<i>Makasih udah jadi pribadi yang mandiri<i/>','<i>Ga ada lagi selain makasih yang bisa disampein</i>','<i>Buat aku, rani layak untuk di apresiasi, untuk hidup, dan perjalanan Rani sampai di titik ini.</i>','<i>Ran..., boleh ya nitip pesen..</i>', '<i>Ran..., kedepan, jadi dewasa kita ga pernah tau soal sesuatu itu mudah atau susah sampai kita ngalamin, hadepin ketakutan itu sendiri</i>','<i>Nanti kita baru akan sadar kalo jalan yang kita ambil itu luar biasa indah.</i>','<i>Setiap keputusan yang diambil nanti, pasti diluar ekspektasi</i>','<i>Dan Allah, selalu ngerencanain semuanya sesuai porsi dan waktunya</i>','<i>Mencapai sesuatu itu ga gampang, tapi bukan berarti mustahil.</i>','<i>Suatu saat kita pasti ngalamin gagal, itu bukan "What if" tapi "When ?"</i>','<i>Dan orang yang kuat, pasti nerima keadaan baik dan buruknya</i>','<i>Jadi terus semangat ya cantikkkkkk, Good luck with your process</i>','Life isn\'t easy','Trust to Allah, the one and only', 'Stay stronger, braver, hopeful heart, graceful and cool 😎','Sekali lagi....','Selamat ulang tahun Raniah...','Wish you all the best ✨✨','Udah, aku nitip itu aja..'],
+        strings: ['<i>Dear, Raniah Nurfadilah...</i>','<i>Hari ini, 13 Agustus, hari lahir kamu.</i>','<i>Bayangin deh, rasanya kayak baru lahir kemaren ga sih 🤔',' <i>Dan sekarang.., <strong>menginjak dewasa hahaha...</strong></i>','btw sekarang udah 20 tahun, kan ?<i/>','<i>Maaf yaa Raan...., basa basinya emang garing hehe...</i>','<i>maklum, emang kadang, aku mah jarinya lebih pinter ngomong daripada mulut, payah emang.. 😓<i/>','<i>Semoga ini ga ngurangin khidmatnya ucapin langsung ya..</i>','Ran...','<i>Terus sehat dan panjang umur yaa..<i/>','<i>Makasih banyak udah jadi orang yang menginspirasi.</i>','<i>Makasih udah jadi pribadi yang kuat,</i>','<i>Makasih udah jadi pribadi, yang mandiri<i/>','<i>Ran.., kamu hebat..</i>','<i>Makasih, cuma itu yang bisa aku sampein</i>','<i>Aku pengen apresiasi Rani, buat perjuangannya sampai di titik ini.</i>','<i>Ran..., boleh ya nitip pesen..</i>', '<i>Ran..., kedepan, kita ga pernah tau soal sesuatu itu mudah atau susah sampai kita ngalamin, hadepin ketakutan itu sendiri</i>','<i>Nanti kita akan sadar kalo jalan yang kita ambil itu luar biasa indah.</i>','<i>Setiap keputusan yang kita aambil nanti, pasti diluar ekspektasi</i>','<i>Tapi Allah, selalu ngerencanain semuanya sesuai bagian dan waktunya ran..</i>','<i>Ran.., Mencapai sesuatu juga ga gampang, tapi bukan berarti mustahil.</i>','<i>Suatu saat kita juga pasti ngalamin gagal, itu bukan "What if" tapi "When ?"</i>','<i>Dan orang yang kuat, pasti nerima keadaan apapun mau baik ataupun buruk</i>','<i>Jadi.., terus semangat ya cantikkkkkk, Good luck with your process</i>','Life isn\'t easy','Trust to Allah, the one and only', 'Stay stronger, braver, hopeful heart, graceful and cool 😎','Sekali lagi....','Selamat ulang tahun ya, Raniah...'],
         typeSpeed: 40,
         fadeOut: true,
         // loop: true,
@@ -35,7 +36,7 @@ function typing() {
 const currentYear = new Date().getFullYear();
 
 // Waktu Ulang Tahun
-const birthdayTime = new Date(`August 09 ${currentYear} 23:45:00`)
+const birthdayTime = new Date(`August 11 ${currentYear} 21:59:00`)
 
 
 // Update Countdown Time
@@ -100,7 +101,7 @@ function showInTime() {
         blockTimer.style.display = 'none'
     });
     btnHidden.style.display = 'block'
-    titleBirthday.innerHTML = 'HBD Raniii 🎉🥳'
+    titleBirthday.innerHTML = `Happy Level Up \n Raniah Nurfadilah \n 🎉🎉🥳🎉🎉`
     gifImg.setAttribute('src','./src/gif/gif-3.gif')
 }
 
@@ -120,6 +121,8 @@ btnHidden.addEventListener('click', () => {
     }, 24610);
     setTimeout(() => {
         nextPage.style.display = 'block'
+        sectionVideo.style.display = 'block'
+        footer.style.display = 'block'
     }, 24630);
 })
 
