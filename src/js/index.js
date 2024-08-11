@@ -9,13 +9,15 @@ const titleBirthday = document.querySelector('.titleBirthday')
 const cardMsgDetail = document.querySelector('.card-msg-detail')
 const cardMsgParagraf = document.querySelectorAll('.card-msg-detail p')
 const typingElement = document.querySelector('span#element')
-const btnHidden = document.querySelector('.btn-notif .btnLink')
+const btnLink = document.querySelector('.btn-notif .btnLink')
+const btnP = document.querySelector('.btn-notif p')
 const audio = document.getElementsByTagName('audio')[0]
 const gifImg = document.querySelector('.head-greating img')
 const headGreating = document.querySelector('.head-greating')
 const btnNotif = document.querySelector('.btn-notif')
 const nextPage = document.querySelector('.nextPage')
 const sectionVideo = document.querySelector('#video')
+const theDay = document.querySelector('.head-greating h4')
 const footer = document.querySelector('footer')
 
 // Function typing
@@ -36,7 +38,7 @@ function typing() {
 const currentYear = new Date().getFullYear();
 
 // Waktu Ulang Tahun
-const birthdayTime = new Date(`August 11 ${currentYear} 22:14:00`)
+const birthdayTime = new Date(`August 11 ${currentYear} 22:26:00`)
 
 
 // Update Countdown Time
@@ -100,15 +102,16 @@ function showInTime() {
     timeBlock.forEach(blockTimer => {
         blockTimer.style.display = 'none'
     });
-    btnHidden.style.display = 'block'
-    titleBirthday.innerHTML = `Happy Level Up \n Raniah Nurfadilah \n 🎉🎉🥳🎉🎉`
-    gifImg.setAttribute('src','./src/gif/gif-3.gif')
+    btnLink.style.display = 'block'
+    titleBirthday.innerHTML = `Happy Level Up <br> Raniah Nurfadilah <br> 🎉🎉🥳🎉🎉`
+    gifImg.setAttribute('src', './src/gif/gif-3.gif')
+    theDay.style.display = 'none'
 }
 
 
-btnHidden.addEventListener('click', () => {
+btnLink.addEventListener('click', () => {
     audio.play()
-    audio.volume = 0.5
+    audio.volume = .4
     cardMsgDetail.classList.add('show')
     btnNotif.style.display = 'none'
     cardMsgParagraf.forEach(element => {
@@ -116,14 +119,14 @@ btnHidden.addEventListener('click', () => {
     });
     headGreating.style.display = 'none'
     setTimeout(() => {
-        const sectionVideo = document.querySelector('#video')
         sectionVideo.style.display = 'block'
+        footer.style.display = 'block'
+        btnP
         clearInterval(counting)
     }, 24610);
     setTimeout(() => {
+        audio.volume = 0.6;
         nextPage.style.display = 'block'
-        sectionVideo.style.display = 'block'
-        footer.style.display = 'block'
     }, 24630);
 })
 
